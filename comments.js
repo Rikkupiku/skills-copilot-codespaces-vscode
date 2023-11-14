@@ -21,3 +21,23 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     // Get data from request body
     const newComment = {
+
+        // id: req.body.id,
+        name: req.body.name,
+        comment: req.body.comment,
+        date: req.body.date
+    };
+
+
+    // Create a new comment based on Comment model
+    const comment = new Comment(newComment);
+
+    // Save comment to database
+    comment.save((err, comment) => {
+        if (err) {
+            res.status(500).send(err);
+        } else {
+            res.status(201).json(comment);
+        }
+    });
+}
