@@ -35,3 +35,5 @@ function skillsMember() {
     var memberSkills32 = document.getElementById("memberSkills32");
     var memberSkills33 = document.getElementById("memberSkills33");
     var
+
+    if (skills.value == "1") {
